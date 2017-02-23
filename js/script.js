@@ -865,5 +865,42 @@ $(document).ready(function() {
 		$('link[rel*=pattern]').remove();
 	});
 	
+	
+	var dir = "images/pics_150/";
+        var fileextension = ".JPG";
+				$.ajax({
+						//This will retrieve the contents of the folder if the folder is configured as 'browsable'
+						url: dir,
+						success: function (data) {
+								//List all .png file names in the page
+								$(data).find("a:contains(" + fileextension + ")").each(function (file) {
+										var filename = dir + this.text;
+
+										var htmlString = "";
+										htmlString += "<div class='masonry-col w20 animation fadeIn'>";
+										htmlString += "    <div class='photo-item animation fadeIn'>";
+										htmlString += "        <img src='"+ filename +"' alt='' class='hover-animation image-zoom-in'>";
+										htmlString += "        <div class='layer wh100 hidden-black-overlay hover-animation fade-in'>";
+										htmlString += "        </div><!--END of PHOTO OVERLAY-->";
+										htmlString += "        <div class='layer wh100 hidden-link hover-animation delay1 fade-in'>";
+										htmlString += "            <div class='alignment'>";
+										htmlString += "                <div class='v-align center-middle'>";
+										htmlString += "                    <a href='"+ filename +"' class='magnific-zoom-gallery' title='Gallery-1'>";
+										htmlString += "					    <div class='de-icon circle light medium-size inline'>";
+										htmlString += "    					    <i class='de-icon-zoom-in'></i>";
+										htmlString += "    					</div>";
+										htmlString += "					</a>";
+										htmlString += "                </div>";
+										htmlString += "        	</div>";
+										htmlString += "        </div><!--END of ICON LINK-->";
+										htmlString += "	</div><!--END of PHOTO-ITEM-->";
+										htmlString += "</div>";
+
+										$("#masonry-gallery").append(htmlString);
+										console.log(htmlString);
+								});
+						}
+				});
+	
 });
 	 
