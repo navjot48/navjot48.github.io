@@ -865,7 +865,7 @@ $(document).ready(function() {
 		$('link[rel*=pattern]').remove();
 	});
 	
-	
+	/*
 	var dir = "images/pics_150/";
         var fileextension = ".JPG";
 				$.ajax({
@@ -901,6 +901,6 @@ $(document).ready(function() {
 								});
 						}
 				});
-	
+	*/
 });
 	 
