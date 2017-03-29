@@ -339,10 +339,10 @@ $(document).ready(function() {
 	//===================================================================================
 	var theday = new Date();
 	theday = new Date(2017, 1, 27);
-	$('#countdown').countdown({ until: theday, format: 'DHMS'});
+	$('#countdown').countdown({ since: theday, format: 'DHMS'});
 	$('#countdown').countdown($.countdown.regionalOptions['custom-label']); 
 		 
-	$('#date-countdown').countdown({until: theday, format: 'DHMS'});
+	$('#date-countdown').countdown({since: theday, format: 'DHMS'});
 		 
 	// 08. MOBILE MENU
 	//==================================================================================
